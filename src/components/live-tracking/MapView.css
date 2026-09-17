@@ -1,0 +1,271 @@
+/* ===== Map View Styles ===== */
+.map-viewmp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+/* ===== Canvas ===== */
+.map-view__canvasmp {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+/* ===== Loading State ===== */
+.map-view__loadingmp {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 14px;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.map-view__loading-iconmp {
+  font-size: 32px;
+  color: #3b82f6;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Error State ===== */
+.map-viewmp.map-view--error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+  background: #f8fafc;
+  min-height: 300px;
+}
+
+.map-view__state-iconmp {
+  font-size: 40px;
+  color: #ef4444;
+}
+
+/* ===== Info Window ===== */
+.map-view__infowindowmp {
+  padding: 8px 4px;
+  min-width: 180px;
+  max-width: 260px;
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.map-view__infowindow-titlemp {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+  border-bottom: 1px solid #f0f2f5;
+  padding-bottom: 6px;
+}
+
+.map-view__infowindow-rowmp {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  font-size: 12px;
+  gap: 12px;
+}
+
+.map-view__infowindow-rowmp span {
+  color: #64748b;
+}
+
+.map-view__infowindow-rowmp strong {
+  font-weight: 600;
+  color: #1a1a2e;
+  text-align: right;
+}
+
+/* ============================================ */
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ============================================ */
+
+/* ===== Tablets (1024px and below) ===== */
+@media (max-width: 1024px) {
+  .map-viewmp {
+    min-height: 250px;
+  }
+
+  .map-view__canvasmp {
+    min-height: 250px;
+  }
+}
+
+/* ===== Small Tablets (768px and below) ===== */
+@media (max-width: 768px) {
+  .map-viewmp {
+    min-height: 200px;
+  }
+
+  .map-view__canvasmp {
+    min-height: 200px;
+  }
+
+  .map-view__loadingmp {
+    font-size: 13px;
+  }
+
+  .map-view__loading-iconmp {
+    font-size: 28px;
+  }
+
+  .map-view__infowindowmp {
+    min-width: 150px;
+    max-width: 220px;
+  }
+
+  .map-view__infowindow-titlemp {
+    font-size: 13px;
+  }
+
+  .map-view__infowindow-rowmp {
+    font-size: 11px;
+  }
+}
+
+/* ===== Mobile Portrait (480px and below) ===== */
+@media (max-width: 480px) {
+  .map-viewmp {
+    min-height: 150px;
+  }
+
+  .map-view__canvasmp {
+    min-height: 150px;
+  }
+
+  .map-view__loadingmp {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .map-view__loading-iconmp {
+    font-size: 24px;
+  }
+
+  .map-viewmp.map-view--error {
+    padding: 16px;
+    font-size: 13px;
+    min-height: 150px;
+  }
+
+  .map-view__state-iconmp {
+    font-size: 32px;
+  }
+
+  .map-view__infowindowmp {
+    min-width: 130px;
+    max-width: 200px;
+    padding: 6px 2px;
+  }
+
+  .map-view__infowindow-titlemp {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .map-view__infowindow-rowmp {
+    font-size: 10px;
+    padding: 2px 0;
+    gap: 8px;
+  }
+}
+
+/* ===== Very Small Screens (360px and below) ===== */
+@media (max-width: 360px) {
+  .map-viewmp {
+    min-height: 120px;
+  }
+
+  .map-view__canvasmp {
+    min-height: 120px;
+  }
+
+  .map-view__infowindowmp {
+    min-width: 110px;
+    max-width: 170px;
+  }
+
+  .map-view__infowindow-titlemp {
+    font-size: 11px;
+  }
+
+  .map-view__infowindow-rowmp {
+    font-size: 9px;
+  }
+}
+
+/* ===== Landscape Phones ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .map-viewmp {
+    min-height: 100px;
+  }
+
+  .map-view__canvasmp {
+    min-height: 100px;
+  }
+
+  .map-view__loadingmp {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .map-view__loading-iconmp {
+    font-size: 20px;
+  }
+}
+
+/* ============================================ */
+/* ===== Google Maps Overrides ===== */
+/* ============================================ */
+
+/* Style Google Maps info window */
+.gm-style .gm-style-iw {
+  background: #ffffff !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+      max-height: max-content !important;
+}
+
+.gm-style .gm-style-iw-d {
+  /* overflow: hidden !important; */
+  padding: 8px 12px !important;
+  background: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+.gm-style .gm-style-iw-tc {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.gm-style .gm-style-iw-t::after {
+  background: #ffffff !important;
+}
+
+/* Close button styling */
+.gm-style .gm-ui-hover-effect {
+  background: transparent !important;
+}
+
+.gm-style .gm-ui-hover-effect img {
+  filter: brightness(0.4) !important;
+}

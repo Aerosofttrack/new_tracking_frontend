@@ -1,0 +1,96 @@
+export const UserRole = {
+  ADMIN: 'ADMIN',
+  DEALER: 'DEALER',
+  USER: 'USER',
+  SUB_USER: 'SUB_USER',
+  EMPLOYEE: 'EMPLOYEE',
+  PERSON: 'PERSON',
+};
+
+export const EmploymentType = {
+  PERMANENT: 'PERMANENT',
+  CONTRACT: 'CONTRACT',
+  TEMPORARY: 'TEMPORARY',
+};
+
+export const Occupation = {
+  DRIVER: 'DRIVER',
+  HELPER: 'HELPER',
+  TECHNICIAN: 'TECHNICIAN',
+  ENGINEER: 'ENGINEER',
+  HR: 'HR',
+  SALES: 'SALES',
+  FLEET_MANAGER: 'FLEET_MANAGER',
+  SECURITY: 'SECURITY',
+  ACCOUNTANT: 'ACCOUNTANT',
+  SUPERVISOR: 'SUPERVISOR',
+  MECHANIC: 'MECHANIC',
+  OTHER: 'OTHER',
+};
+
+// constants/enums.js
+export const EntityStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  PENDING: 'PENDING', // Make sure this exists
+  SUSPENDED: 'SUSPENDED',
+  DELETED: 'DELETED',
+};
+
+export const OnboardingType = {
+  ADMIN: 'ADMIN',
+  DEALER: 'DEALER',
+  SELF: 'SELF',
+};
+
+export const DurationUnit = {
+  DAY: 'DAY',
+  MONTH: 'MONTH',
+  YEAR: 'YEAR',
+};
+
+export const DeviceStatus = {
+  PENDING: 'PENDING',
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  SUSPENDED: 'SUSPENDED',
+};
+
+export const ResourceType = {
+  ALL_VEHICLES: 'ALL_VEHICLES',
+  VEHICLE_GROUP: 'VEHICLE_GROUP',
+  VEHICLE: 'VEHICLE',
+};
+
+
+// constants/enums.js - Add these new enums
+
+export const OrderType = {
+  LICENSE_PACKAGE: 'LICENSE_PACKAGE',
+  USER_ACTIVATION: 'USER_ACTIVATION',
+  LICENSE_RENEWAL: 'LICENSE_RENEWAL',
+};
+
+export const PaymentMode = {
+  CASH: 'CASH',
+  CARD: 'CARD',
+  UPI: 'UPI',
+  BANK_TRANSFER: 'BANK_TRANSFER',
+  CHEQUE: 'CHEQUE',
+  ONLINE: 'ONLINE',
+  OTHER: 'OTHER',
+};
+
+export const PaymentStatus = {
+  PENDING: 'PENDING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED',
+};
+
+export const OrderStatus = {
+  PENDING: 'PENDING',
+  PROCESSING: 'PROCESSING',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED',
+};

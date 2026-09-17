@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Status Badge (Admin Console)
+   Color tones (.badge-success, .badge-info, .badge-warning, .badge-muted,
+   .badge-primary, .badge-default) are defined once in Dashboard.css and
+   shared here — this file only sets the badge's base shape/behavior.
+   ========================================================================== */
+.app-shell .badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 1.4;
+}

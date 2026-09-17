@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+.app-shell .modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 24, 43, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 150;
+  animation: modal-fade 0.15s ease;
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.app-shell .modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--app-surface);
+  border-radius: var(--app-radius-lg);
+  /* box-shadow: var(--app-shadow-lg); */
+  animation: modal-in 0.2s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+  scrollbar-width: none;
+}
+
+.app-shell .modal-wide {
+  max-width: 760px;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.app-shell .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--app-border);
+  position: sticky;
+  top: 0;
+  background: var(--app-surface);
+  z-index: 1;
+}
+
+.app-shell .modal-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.app-shell .icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--app-radius-sm);
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  color: var(--app-text-secondary);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.app-shell .icon-btn:hover {
+  color: var(--app-text);
+  border-color: #c3cbdb;
+}
+
+.app-shell .modal-body {
+  padding: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell .modal-overlay,
+  .app-shell .modal {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell .modal-overlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .app-shell .modal {
+    max-height: 92vh;
+    border-radius: var(--app-radius-lg) var(--app-radius-lg) 0 0;
+  }
+}

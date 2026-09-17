@@ -1,0 +1,27 @@
+.donut-chart {
+  overflow: visible;
+}
+
+.donut-chart__segment {
+  transition: stroke-dasharray 0.6s ease, stroke-dashoffset 0.6s ease;
+}
+
+.donut-chart__center-value {
+  font-family: var(--app-font, 'Inter', system-ui, sans-serif);
+  font-size: 30px;
+  font-weight: 700;
+  fill: var(--app-text, #1b2434);
+}
+
+.donut-chart__center-label {
+  font-family: var(--app-font, 'Inter', system-ui, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  fill: var(--app-text-secondary, #5b6577);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .donut-chart__segment {
+    transition: none;
+  }
+}

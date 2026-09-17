@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+.app-shell .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--app-border);
+}
+
+.app-shell .pagination-info {
+  font-size: 12.5px;
+  color: var(--app-text-secondary);
+}
+
+@media (max-width: 480px) {
+  .app-shell .pagination {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app-shell .pagination-info {
+    text-align: center;
+    order: -1;
+  }
+}

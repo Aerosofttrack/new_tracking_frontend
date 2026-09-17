@@ -1,0 +1,542 @@
+/* LicenseActivation.css - Full updated CSS */
+
+/* ==========================================================================
+   License Activation
+   ========================================================================== */
+
+.la-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---------- Toast Notification ---------- */
+.la-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); */
+  animation: slideInRight 0.4s ease-out;
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.la-toast-success {
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  color: #166534;
+}
+
+.la-toast-error {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  color: #991b1b;
+}
+
+.la-toast-content {
+  flex: 1;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.la-toast-content div {
+  margin-bottom: 2px;
+}
+
+.la-toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.la-toast-close:hover {
+  opacity: 1;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+/* ---------- Header ---------- */
+.la-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.la-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.la-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13.5px;
+}
+
+.la-header-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ---------- Alerts ---------- */
+.la-alert {
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.la-alert-error {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.la-alert-success {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+}
+
+.la-alert-content {
+  white-space: pre-line;
+  line-height: 1.8;
+}
+
+/* ---------- Cards ---------- */
+.la-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); */
+  overflow: hidden;
+}
+
+.la-card:first-child {
+  border-left: 4px solid #3b82f6;
+}
+
+.la-card-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 0;
+  padding: 16px 22px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.la-card-title svg {
+  color: #3b82f6;
+}
+
+.la-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+  padding-right: 16px;
+}
+
+.la-card-title-row .la-card-title {
+  border-bottom: none;
+}
+
+.la-card-body {
+  padding: 20px 22px;
+}
+
+/* ---------- Dealer Info ---------- */
+.la-dealer-info {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.la-dealer-info .la-hint {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.la-dealer-info-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* ---------- Field Grids ---------- */
+.la-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.la-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.la-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+.la-license-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+}
+
+/* ---------- Fields ---------- */
+.la-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.la-field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.la-field .req {
+  color: #ef4444;
+}
+
+.la-field .la-mt {
+  margin-top: 10px;
+}
+
+.la-field input,
+.la-field select,
+.la-field textarea {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 13.5px;
+  font-family: "Space Grotesk",sans-serif;
+  color: #111827;
+  /* transition: border-color 0.15s ease, box-shadow 0.15s ease; */
+}
+
+.la-field input:focus,
+.la-field select:focus,
+.la-field textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  /* box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); */
+}
+
+.la-field select:disabled,
+.la-field input:disabled,
+.la-field textarea:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.la-field input.la-readonly {
+  background: #f3f4f6;
+  color: #4b5563;
+  cursor: default;
+}
+
+.la-field input.la-error,
+.la-field select.la-error,
+.la-field textarea.la-error {
+  border-color: #ef4444;
+}
+
+.la-error-text {
+  font-size: 11.5px;
+  color: #ef4444;
+}
+
+.la-hint {
+  font-size: 11.5px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.la-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ---------- Stats Box ---------- */
+.la-stats-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.la-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.la-stat-label {
+  font-size: 12.5px;
+  color: #6b7280;
+}
+
+.la-stat-value {
+  font-family: "Space Grotesk",sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.la-stat-available {
+  color: #22c55e;
+}
+
+/* ---------- Custom Attributes Table ---------- */
+.la-attr-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.la-attr-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b7280;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.la-attr-table td {
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+.la-attr-table td input {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: "Space Grotesk",sans-serif;
+  color: #111827;
+}
+
+.la-attr-table td input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  /* box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); */
+}
+
+.la-attr-table td input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.la-col-num {
+  width: 32px;
+  color: #6b7280;
+  font-family: "Space Grotesk",sans-serif;
+  font-size: 12px;
+}
+
+.la-col-action {
+  width: 44px;
+  text-align: center;
+}
+
+.la-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.la-icon-btn:hover:not(:disabled) {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.la-icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Buttons ---------- */
+.la-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Space Grotesk",sans-serif;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.la-btn-primary {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.la-btn-primary:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.la-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.la-btn-ghost {
+  background: transparent;
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+.la-btn-ghost:hover {
+  color: #111827;
+  border-color: #9ca3af;
+}
+
+.la-btn-outline {
+  background: transparent;
+  border-color: #3b82f6;
+  color: #3b82f6;
+  padding: 7px 12px;
+  font-size: 12.5px;
+}
+
+.la-btn-outline:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* ---------- Footer ---------- */
+.la-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 4px 0 20px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .la-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .la-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .la-license-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .la-grid-2,
+  .la-grid-3,
+  .la-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .la-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .la-header-actions {
+    width: 100%;
+  }
+
+  .la-header-actions .la-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .la-footer {
+    flex-direction: column-reverse;
+  }
+
+  .la-footer .la-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .la-attr-table thead {
+    display: none;
+  }
+
+  .la-attr-table td {
+    display: block;
+    width: 100%;
+    padding: 6px 4px;
+  }
+
+  .la-attr-table tr {
+    display: block;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .la-col-num {
+    display: none;
+  }
+
+  .la-toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    min-width: auto;
+  }
+
+  .la-dealer-info-display {
+    grid-template-columns: 1fr;
+  }
+}

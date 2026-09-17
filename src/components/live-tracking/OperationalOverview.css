@@ -1,0 +1,436 @@
+/* ===== Operational Overview Styles ===== */
+.op-overviewop {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 24px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  border-radius: 0px !important;
+  overflow: hidden;
+}
+
+/* ===== Header ===== */
+.op-overview__headerop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.op-overview__headerop h2 {
+  font-size: 18px !important;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a2e;
+}
+
+.op-overview__toggleop {
+  display: flex;
+  gap: 4px;
+  background: #f0f2f5;
+  padding: 3px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.op-overview__toggle-btnop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.op-overview__toggle-btnop:hover {
+  color: #1a1a2e;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.op-overview__toggle-btnop.is-active {
+  background: #ffffff;
+  color: #1a1a2e;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+}
+
+/* ===== Cards Grid ===== */
+.op-overview__cardsop {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+/* ===== Individual Card ===== */
+.op-cardop {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.op-cardop:hover {
+  transform: translateY(-2px);
+  border-color: var(--card-color, #3b82f6);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+}
+
+.op-cardop.op-card--active {
+  border-color: var(--card-color, #3b82f6) !important;
+  /* box-shadow: 0 0 0 2px var(--card-color, #3b82f6), 0 4px 16px rgba(59, 130, 246, 0.1); */
+}
+
+/* Card colors */
+.op-cardop.op-card--blue { --card-color: #3b82f6; }
+.op-cardop.op-card--green { --card-color: #22c55e; }
+.op-cardop.op-card--orange { --card-color: #f59e0b; }
+.op-cardop.op-card--cyan { --card-color: #06b6d4; }
+.op-cardop.op-card--purple { --card-color: #8b5cf6; }
+.op-cardop.op-card--red { --card-color: #ef4444; }
+.op-cardop.op-card--gray { --card-color: #6b7280; }
+
+.op-card__topop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.op-card__iconop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  color: var(--card-color);
+  background: rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.op-card__ringop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a2e;
+  background: conic-gradient(
+    var(--ring-clr, #3b82f6) calc(var(--pct, 0) * 1%),
+    #e2e8f0 calc(var(--pct, 0) * 1%)
+  );
+  flex-shrink: 0;
+  position: relative;
+}
+
+.op-card__ringop::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.op-card__ringop span {
+  position: relative;
+  z-index: 1;
+}
+
+.op-card__labelop {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.op-card__value-rowop {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.op-card__valueop {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.2;
+}
+
+.op-card__sublabelop {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* ===== Chart View ===== */
+.op-overview__chartop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+  min-height: 180px;
+}
+
+/* ============================================ */
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ============================================ */
+
+/* ===== Tablets (1024px and below) ===== */
+@media (max-width: 1024px) {
+  .op-overviewop {
+    padding: 14px 20px;
+  }
+
+  .op-overview__cardsop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .op-cardop {
+    padding: 10px 12px;
+  }
+
+  .op-card__valueop {
+    font-size: 20px;
+  }
+}
+
+/* ===== Small Tablets (768px and below) ===== */
+@media (max-width: 768px) {
+  .op-overviewop {
+    padding: 12px 16px;
+  }
+
+  .op-overview__headerop h2 {
+    font-size: 14px !important;
+  }
+
+  .op-overview__toggle-btnop {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .op-overview__cardsop {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .op-cardop {
+    padding: 8px 10px;
+  }
+
+  .op-card__topop {
+    margin-bottom: 4px;
+  }
+
+  .op-card__iconop {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+  }
+
+  .op-card__ringop {
+    width: 32px;
+    height: 32px;
+    font-size: 9px;
+  }
+
+  .op-card__ringop::after {
+    inset: 2px;
+  }
+
+  .op-card__valueop {
+    font-size: 18px;
+  }
+
+  .op-card__sublabelop {
+    font-size: 10px;
+  }
+
+  .op-card__labelop {
+    font-size: 9px;
+  }
+}
+
+/* ===== Mobile Portrait (480px and below) ===== */
+@media (max-width: 480px) {
+  .op-overviewop {
+    padding: 10px 12px;
+  }
+
+  .op-overview__headerop {
+    margin-bottom: 10px;
+  }
+
+  .op-overview__headerop h2 {
+    font-size: 13px !important;
+  }
+
+  .op-overview__toggle-btnop {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .op-overview__toggle-btnop svg {
+    font-size: 14px;
+  }
+
+  .op-overview__cardsop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .op-cardop {
+    padding: 6px 8px;
+    border-radius: 8px;
+  }
+
+  .op-card__topop {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .op-card__iconop {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .op-card__ringop {
+    width: 28px;
+    height: 28px;
+    font-size: 8px;
+    flex-shrink: 0;
+  }
+
+  .op-card__ringop::after {
+    inset: 2px;
+  }
+
+  .op-card__labelop {
+    font-size: 8px;
+    margin-top: 0;
+  }
+
+  .op-card__value-rowop {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .op-card__valueop {
+    font-size: 16px;
+  }
+
+  .op-card__sublabelop {
+    font-size: 9px;
+  }
+
+  .op-overview__chartop {
+    min-height: 150px;
+    padding: 8px 0;
+  }
+}
+
+/* ===== Very Small Screens (360px and below) ===== */
+@media (max-width: 360px) {
+  .op-overviewop {
+    padding: 8px 8px;
+  }
+
+  .op-overview__headerop h2 {
+    font-size: 12px !important;
+  }
+
+  .op-overview__cardsop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .op-cardop {
+    padding: 4px 6px;
+  }
+
+  .op-card__valueop {
+    font-size: 14px;
+  }
+
+  .op-card__iconop {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+
+  .op-card__ringop {
+    width: 24px;
+    height: 24px;
+    font-size: 7px;
+  }
+
+  .op-card__labelop {
+    font-size: 7px;
+  }
+}
+
+/* ===== Landscape Phones ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .op-overviewop {
+    padding: 6px 16px;
+  }
+
+  .op-overview__headerop {
+    margin-bottom: 6px;
+  }
+
+  .op-overview__headerop h2 {
+    font-size: 13px !important;
+  }
+
+  .op-overview__cardsop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .op-cardop {
+    padding: 4px 8px;
+  }
+
+  .op-card__valueop {
+    font-size: 14px;
+  }
+
+  .op-card__iconop {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .op-card__ringop {
+    width: 24px;
+    height: 24px;
+    font-size: 7px;
+  }
+}
